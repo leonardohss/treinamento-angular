@@ -1,32 +1,18 @@
 <section class="jumbotron text-center">
-    <h1 class="jumbotron-heading">JSONPlaceholder</h1>
-    <p class="lead text-muted">
-        {{ text }}
+    <h1 class="jumbotron-heading">{{ appName }}</h1>
+    <p class="lead text-muted"> {{ text }} </p>
+
+    <p>
+        <button class="btn" [ngClass]="{ 'btn-success': colorIndex === 1, 'btn-danger': colorIndex === 2 }">Dynamic Color</button>&nbsp;
+        <button class="btn btn-secondary" disabled="!isDisable">Disabled Action</button>&nbsp;
+        <button class="btn btn-info" (click)="onClick($event)">Eventy Property</button>
     </p>
 </section>
 
-<div class="row mb-2">
-    <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Featured post</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
-                <p class="card-text mb-auto">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-        </div>
-    </div>
+<app-articles>
+    <img src="https://img.vixdata.io/pd/jpg-large/pt/sites/default/files/g/got-drogon-dragon-daenerys-s8.jpg" width="100%" alt="DeLorean">
+</app-articles>
 
-    <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Post title</h3>
-                <div class="mb-1 text-muted">Nov 11</div>
-                <p class="mb-auto">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+<app-posts></app-posts>
+
+<!-- <app-photos></app-photos> -->
