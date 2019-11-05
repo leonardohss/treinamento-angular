@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './templates/home/home.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
-import { NotFound } from './templates/notfound/notfound.component';
+import { NotFoundComponent } from './templates/notfound/notfound.component';
 import { ArticlesComponent } from './templates/articles/articles.component';
 import { UserService } from './services/user.service';
 import { PostsComponent } from './templates/posts/posts.component';
@@ -15,6 +15,11 @@ import { PostService } from './services/post.service';
 import { PhotoService } from './services/photo.service';
 import { PhotosComponent } from './templates/photos/photos.component';
 import { TruncatePipe } from './pipes/truncate.pipes';
+import { PhotoCardComponent } from './templates/photos/photo-card/photo-card.component';
+import { TimerComponent } from './templates/timer/timer.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AppRouting } from './app.routing';
+import { PhotoDetailsComponent } from './templates/photos/photo-details/photo-details.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,18 @@ import { TruncatePipe } from './pipes/truncate.pipes';
     PostsComponent,
     PhotosComponent,
     TruncatePipe,
-    NotFound
+    PhotoCardComponent,
+    NotFoundComponent,
+    TimerComponent,
+    PhotoDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    BsDropdownModule.forRoot(),
+    AppRouting
   ],
   providers: [
     UserService,

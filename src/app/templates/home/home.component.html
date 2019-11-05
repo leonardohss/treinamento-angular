@@ -1,4 +1,4 @@
-<section class="jumbotron text-center">
+<section class="jumbotron text-center" [ngStyle]="{ 'background-color': selectedBackgroundColor }">
     <h1 class="jumbotron-heading">{{ appName }}</h1>
     <p class="lead text-muted"> {{ text }} </p>
 
@@ -9,10 +9,8 @@
     </p>
 </section>
 
-<app-articles>
+<app-articles (backgroundColor)=(onSetBackgroundColor($event))>
     <img src="https://img.vixdata.io/pd/jpg-large/pt/sites/default/files/g/got-drogon-dragon-daenerys-s8.jpg" width="100%" alt="DeLorean">
 </app-articles>
 
 <app-posts></app-posts>
-
-<!-- <app-photos></app-photos> -->

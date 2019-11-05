@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   colorIndex = 0;
   isDisable: boolean;
   text = 'Caneta Azul';
+  selectedBackgroundColor: string;
 
   ngOnInit(){
     console.log('On Init');
@@ -33,6 +34,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
 
   onClick(event: any){
     console.log('Event Property: ', event);
+  }
+
+  onSetBackgroundColor(color: string){
+    this.selectedBackgroundColor = color;
   }
 
 }

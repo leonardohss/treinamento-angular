@@ -1,16 +1,47 @@
 <div class="row">
-    <div class="col-lg-4 ">
+    <div class="col-lg-2">
         <h2>Content</h2>
         <p>
             <ng-content></ng-content>
         </p>
     </div>
-    <div class="col-lg-4">
-        <h2>Mock</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+    <div class="col-lg-2">
+        <h2>Color</h2>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="creamypeach" name="backgroundColor" (click)="onSetBackgroundColor('#f3a683')">
+            <label class="custom-control-label" for="creamypeach">Color: 1</label>
+        </div>
+
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="mintleaf" name="backgroundColor" (click)="onSetBackgroundColor('#00b894')">
+            <label class="custom-control-label" for="mintleaf">Color: 2</label>
+        </div>
+
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="sourlemon" name="backgroundColor" (click)="onSetBackgroundColor('#ffeaa7')">
+            <label class="custom-control-label" for="sourlemon">Color: 3</label>
+        </div>
     </div>
-    <div class="col-lg-4">
-        <h2>Mock</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+    <div class="col-lg-3">
+        <h2>Switch</h2>
+        <div [ngSwitch]="selectedBackgroundColor">
+            <p>Selected color:
+                <b *ngSwitchCase="'#f3a683'" style="color: #f3a683;">Creamy Peach</b>
+                <b *ngSwitchCase="'#00b894'" style="color: #00b894;">Mint Leaf</b>
+                <b *ngSwitchCase="'#ffeaa7'" style="color: #ffeaa7;">Sour Lemon</b>
+                <b *ngSwitchCase="" style="color: #c9c9c9;">Default</b>
+            </p>
+        </div>
     </div>
+
+    <div class="col-lg-3">
+        <button class="btn btn-success" (click)="stopwatch.start()">Start</button>&nbsp;
+        <button class="btn btn-danger" (click)="stopwatch.stop()">Stop</button>&nbsp;
+        <button class="btn btn-warning" (click)="stopwatch.clear()">Clear</button>
+    </div>
+    <div class="col-lg-2">
+        <app-timer #stopwatch></app-timer>
+    </div>
+
 </div>

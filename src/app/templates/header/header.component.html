@@ -7,6 +7,23 @@
                 <strong>{{ appName }}</strong>
             </a>
 
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="true">
+                            <span dropdown routerLinkActive="active">
+                        <a href class="nav-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">Photos</a>
+                        <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="basic-link">
+                          <li><a class="dropdown-item">Add New</a></li>
+                          <li class="divider dropdown-divider"></li>
+                          <li><a class="dropdown-item" routerLink="photos">View All</a></li>
+                        </ul>
+                      </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
             <div class="nav-item my-2 my-md-0">
                 <a class="nav-link active" style="color: #fff;">
                 Olá, {{ loggedUser.name }}
