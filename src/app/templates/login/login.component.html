@@ -1,0 +1,17 @@
+<body class="text-center">
+    <form class="form-signin needs-validation" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <img class="mb-4" src="http://pluspng.com/img-png/avengers-logo-png-avengers-logo-png-1376.png" width="72" height="72" />
+
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+
+        <input formControlName="username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+
+        <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="loginForm.invalid">Sign in</button>
+        <p>
+            {{ loginForm.value | json }}
+        </p>
+    </form>
+</body>

@@ -15,5 +15,9 @@ export class PhotoCardComponent {
   goDetails(photoId: number){
     this.router.navigate([`photos/${photoId}/details`]);
   }
+
+  goEdit(photoId: number){
+    this.router.navigate([`photos/${photoId}/edit`]);
+  }
 }
 

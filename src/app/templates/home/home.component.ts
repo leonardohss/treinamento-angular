@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 
 import { APP_NAME } from './../../app.const';
+import { Globals } from 'src/app/app.globals';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   isDisable: boolean;
   text = 'Caneta Azul';
   selectedBackgroundColor: string;
+
+  constructor(public globals: Globals){}
 
   ngOnInit(){
     console.log('On Init');
